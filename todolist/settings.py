@@ -45,6 +45,7 @@ INSTALLED_APPS = (
 
 MIDDLEWARE = (
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -57,6 +58,15 @@ ROOT_URLCONF = "todolist.urls"
 
 WSGI_APPLICATION = "todolist.wsgi.application"
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage' 
+
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
