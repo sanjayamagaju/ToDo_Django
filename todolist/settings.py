@@ -23,7 +23,7 @@ SECRET_KEY = "@e2(yx)v&tgh3_s=0yja-i!dpebxsz^dg47x)-k&kq_3zf*9e*"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['']
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
@@ -90,6 +90,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Ensure CSRF protection is configured for testing
+CSRF_COOKIE_SECURE = True  # Set to True if using HTTPS
+CSRF_COOKIE_HTTPONLY = True 
 
 
 # Static files (CSS, JavaScript, Images)
