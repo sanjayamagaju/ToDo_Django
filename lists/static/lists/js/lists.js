@@ -1,28 +1,26 @@
-$(document).ready(function() {
-  $(':checkbox').on('click', changeTodoStatus);
+$(document).ready(function () {
+  $(":checkbox").on("click", changeTodoStatus);
 });
 
 function changeTodoStatus() {
-  putNewStatus(this.getAttribute('data-todo-id'), $(this).is(':checked'));
+  putNewStatus(this.getAttribute("data-todo-id"), $(this).is(":checked"));
 }
 
 function csrfSafeMethod(method) {
   // these HTTP methods do not require CSRF protection
-  return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  return /^(GET|HEAD|OPTIONS|TRACE)$/.test(method);
 }
 
 // function from the django docs
 function getCookie(name) {
   var cookieValue = null;
-  if (document.cookie && document.cookie != '') {
-    var cookies = document.cookie.split(';');
+  if (document.cookie && document.cookie != "") {
+    var cookies = document.cookie.split(";");
     for (var i = 0; i < cookies.length; i++) {
       var cookie = jQuery.trim(cookies[i]);
       // Does this cookie string begin with the name we want?
-      if (cookie.substring(0, name.length + 1) == (name + '=')) {
-        cookieValue = decodeURIComponent(
-          cookie.substring(name.length + 1)
-        );
+      if (cookie.substring(0, name.length + 1) == name + "=") {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
         break;
       }
     }

@@ -24,6 +24,8 @@ SECRET_KEY = "@e2(yx)v&tgh3_s=0yja-i!dpebxsz^dg47x)-k&kq_3zf*9e*"
 DEBUG = True
 
 ALLOWED_HOSTS = ['letsgo-todo.up.railway.app']
+ALLOWED_HOSTS = ['*']
+
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
@@ -63,7 +65,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, "todolist/static")
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
