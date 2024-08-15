@@ -58,7 +58,7 @@ ROOT_URLCONF = "todolist.urls"
 
 WSGI_APPLICATION = "todolist.wsgi.application"
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage' 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 STATIC_URL = "/static/"
 
@@ -93,7 +93,9 @@ USE_TZ = True
 
 # Ensure CSRF protection is configured for testing
 CSRF_COOKIE_SECURE = True  # Set to True if using HTTPS
-CSRF_COOKIE_HTTPONLY = True 
+CSRF_COOKIE_HTTPONLY = True
+
+CSRF_TRUSTED_ORIGINS = ['https://letsgo-todo.up.railway.app']
 
 
 # Static files (CSS, JavaScript, Images)
